@@ -1,4 +1,4 @@
-package com.github.yanglifan.kotlinworkshop
+package com.github.yanglifan.workshop.kotlin
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
