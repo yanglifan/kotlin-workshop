@@ -1,6 +1,7 @@
 package com.github.yanglifan.workshop.kotlin.coroutine
 
 import kotlinx.coroutines.experimental.delay
+import kotlinx.coroutines.experimental.launch
 import kotlinx.coroutines.experimental.runBlocking
 import org.junit.Test
 import org.slf4j.LoggerFactory
@@ -35,5 +36,19 @@ class SimpleDemo {
         }, 1, TimeUnit.SECONDS)
         scheduler.shutdown()
         scheduler.awaitTermination(1, TimeUnit.SECONDS)
+    }
+
+    @Test
+    fun delay_with_coroutine_launch() {
+        runBlocking {
+            log.info("Hello")
+            val job = launch {
+                // launch new coroutine and keep a reference to its Job
+                delay(5000L)
+                log.info("World")
+            }
+            job.cancel()
+            job.join() // wait until child coroutine completes
+        }
     }
 }
