@@ -1,5 +1,6 @@
 package com.github.yanglifan.workshop.kotlin.coroutine
 
+import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.launch
 import kotlinx.coroutines.experimental.runBlocking
@@ -39,7 +40,7 @@ class SimpleDemo {
     }
 
     @Test
-    fun delay_with_coroutine_launch() {
+    fun delay_with_launch() {
         runBlocking {
             log.info("Hello")
             val job = launch {
@@ -50,5 +51,22 @@ class SimpleDemo {
             job.cancel()
             job.join() // wait until child coroutine completes
         }
+    }
+
+    @Test
+    fun delay_with_async() {
+        log.info("Start to demo async")
+
+        val one = async {
+            delay(1000)
+            1
+        }
+
+        val two = async {
+            delay(2000)
+            2
+        }
+
+        runBlocking { log.info("${one.await() + two.await()}") }
     }
 }
