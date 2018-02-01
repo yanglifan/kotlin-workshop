@@ -6,7 +6,7 @@ import org.junit.Test
 import org.slf4j.LoggerFactory
 import java.util.concurrent.CompletableFuture
 
-class FutureDemo {
+class CompletableFutureDemo {
     private val log = LoggerFactory.getLogger(javaClass)
 
     @Test
