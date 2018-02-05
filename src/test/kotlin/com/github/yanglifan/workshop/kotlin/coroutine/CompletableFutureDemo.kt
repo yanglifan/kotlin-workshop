@@ -11,8 +11,9 @@ class CompletableFutureDemo {
 
     @Test
     fun future_with_old_way() {
-        val future = CompletableFuture.supplyAsync({ 100 })
-        future.thenAccept({ value ->
+        val future = CompletableFuture.supplyAsync({ 1 })
+        future.thenApply { value -> "${value + 2}" }
+                .thenAccept({ value ->
             log.info(value.toString())
         })
     }
@@ -20,9 +21,10 @@ class CompletableFutureDemo {
     @Test
     fun future_with_coroutine() {
         runBlocking {
-            val future = CompletableFuture.supplyAsync({ 100 })
+            val future = CompletableFuture.supplyAsync({ 1 })
             val value = future.await()
-            log.info(value.toString())
+            val result = value + 2
+            log.info(result.toString())
         }
     }
 }
