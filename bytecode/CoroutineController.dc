@@ -1,0 +1,64 @@
+Compiled from "CoroutineController.kt"
+public class com.github.yanglifan.workshop.kotlin.CoroutineController {
+  public reactor.core.publisher.Mono<java.lang.String> getNumberOfMessages(java.lang.String);
+    Code:
+       0: aload_1
+       1: ldc           #14                 // String personId
+       3: invokestatic  #20                 // Method kotlin/jvm/internal/Intrinsics.checkParameterIsNotNull:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: getstatic     #26                 // Field kotlinx/coroutines/experimental/Unconfined.INSTANCE:Lkotlinx/coroutines/experimental/Unconfined;
+       9: checkcast     #28                 // class kotlin/coroutines/experimental/CoroutineContext
+      12: aconst_null
+      13: new           #30                 // class com/github/yanglifan/workshop/kotlin/CoroutineController$getNumberOfMessages$1
+      16: dup
+      17: aload_0
+      18: aload_1
+      19: aconst_null
+      20: invokespecial #34                 // Method com/github/yanglifan/workshop/kotlin/CoroutineController$getNumberOfMessages$1."<init>":(Lcom/github/yanglifan/workshop/kotlin/CoroutineController;Ljava/lang/String;Lkotlin/coroutines/experimental/Continuation;)V
+      23: checkcast     #36                 // class kotlin/jvm/functions/Function2
+      26: iconst_2
+      27: aconst_null
+      28: invokestatic  #42                 // Method kotlinx/coroutines/experimental/reactor/MonoKt.mono$default:(Lkotlin/coroutines/experimental/CoroutineContext;Lkotlinx/coroutines/experimental/Job;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lreactor/core/publisher/Mono;
+      31: areturn
+
+  public com.github.yanglifan.workshop.kotlin.persistence.ReactivePeopleRepository getPeopleRepository();
+    Code:
+       0: aload_0
+       1: getfield      #51                 // Field peopleRepository:Lcom/github/yanglifan/workshop/kotlin/persistence/ReactivePeopleRepository;
+       4: areturn
+
+  public com.github.yanglifan.workshop.kotlin.persistence.ReactiveAuditRepository getAuditRepository();
+    Code:
+       0: aload_0
+       1: getfield      #57                 // Field auditRepository:Lcom/github/yanglifan/workshop/kotlin/persistence/ReactiveAuditRepository;
+       4: areturn
+
+  public com.github.yanglifan.workshop.kotlin.persistence.ReactiveMessageRepository getMessageRepository();
+    Code:
+       0: aload_0
+       1: getfield      #63                 // Field messageRepository:Lcom/github/yanglifan/workshop/kotlin/persistence/ReactiveMessageRepository;
+       4: areturn
+
+  public com.github.yanglifan.workshop.kotlin.CoroutineController(com.github.yanglifan.workshop.kotlin.persistence.ReactivePeopleRepository, com.github.yanglifan.workshop.kotlin.persistence.ReactiveAuditRepository, com.github.yanglifan.workshop.kotlin.persistence.ReactiveMessageRepository);
+    Code:
+       0: aload_1
+       1: ldc           #65                 // String peopleRepository
+       3: invokestatic  #20                 // Method kotlin/jvm/internal/Intrinsics.checkParameterIsNotNull:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_2
+       7: ldc           #66                 // String auditRepository
+       9: invokestatic  #20                 // Method kotlin/jvm/internal/Intrinsics.checkParameterIsNotNull:(Ljava/lang/Object;Ljava/lang/String;)V
+      12: aload_3
+      13: ldc           #67                 // String messageRepository
+      15: invokestatic  #20                 // Method kotlin/jvm/internal/Intrinsics.checkParameterIsNotNull:(Ljava/lang/Object;Ljava/lang/String;)V
+      18: aload_0
+      19: invokespecial #70                 // Method java/lang/Object."<init>":()V
+      22: aload_0
+      23: aload_1
+      24: putfield      #51                 // Field peopleRepository:Lcom/github/yanglifan/workshop/kotlin/persistence/ReactivePeopleRepository;
+      27: aload_0
+      28: aload_2
+      29: putfield      #57                 // Field auditRepository:Lcom/github/yanglifan/workshop/kotlin/persistence/ReactiveAuditRepository;
+      32: aload_0
+      33: aload_3
+      34: putfield      #63                 // Field messageRepository:Lcom/github/yanglifan/workshop/kotlin/persistence/ReactiveMessageRepository;
+      37: return
+}
